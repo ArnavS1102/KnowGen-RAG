@@ -5,7 +5,7 @@ import os
 import json
 from preprocess_pdf import PDF2MD
 from postprocess_pdf import Cleaner, extract_last_itemize_block
-from get_nodes import Node
+from node import Node
 
 class RAG:
     def __init__(self, no_docs):
