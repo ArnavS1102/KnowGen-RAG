@@ -8,13 +8,14 @@
 ## Table of Contents
 
 1. [Overview](#overview)
-2. [Features](#features)
-3. [Project Structure](#project-structure)
-4. [Setup Instructions](#setup-instructions)
-5. [How to Use](#how-to-use)
-6. [Dependencies](#dependencies)
-7. [Contributing](#contributing)
-8. [License](#license)
+2. [Benefits](#benefits)
+3. [Features](#features)
+4. [Project Structure](#project-structure)
+5. [Setup Instructions](#setup-instructions)
+6. [How to Use](#how-to-use)
+7. [Dependencies](#dependencies)
+8. [Contributing](#contributing)
+9. [License](#license)
 
 ---
 
