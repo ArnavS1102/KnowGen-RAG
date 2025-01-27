@@ -43,30 +43,26 @@ By leveraging knowledge graphs and advanced natural language generation, KnowGen
 
 ---
 
-
-List the key features of the project:
-
-- Feature 1
-- Feature 2
-- Feature 3
-
-Example:
-- Parses and processes large datasets
-- Generates custom reports
-- Provides an interactive user interface
-
----
-
 ## Project Structure
 
 Provide a breakdown of the files and their purpose:
 
 ```plaintext
-├── main.py             # Entry point of the application
-├── utils.py            # Contains utility functions used across the project
-├── config.py           # Configuration and settings
+├── sample.py           # Entry point of the application
 ├── requirements.txt    # List of dependencies
-├── README.md           # Documentation for the project
-├── data/               # Folder for input data files
-├── output/             # Folder for generated outputs
-└── tests/              # Folder containing unit tests
+├── prompts.json        # Prompts
+├── rag.py              # Entry point
+├── preprocess_pdf.py   # For PDF to MD using OCR and additional cleaning
+├── postprocess_pdf.py  # For processing tables, ewuations and additonal Regex patterns
+├── md_split.py         # For markdown splitting
+├── node.py             # For entity-relationship extraction
+├── get_kg.py           # For generating the graph-based structure for searching
+└── get_faiss.py        # For generating FAISS index
+└── rerank.py           # For Cohere's API call (Re-Ranking)
+└── gemini_api.py       # For Gemini's API call (Answer Generation)
+└── gemini_api.py       # For Gemini's API call (Answer Generation)
+
+
+ 
+
+
