@@ -43,7 +43,7 @@
 - Increased flexibility and scalability with support for multiple LLMs.
 - Reliable assistance for decision-making and problem-solving, backed by domain expertise.
 
-This framework offers a powerful solution for bridging the gap between unstructured technical data and effective natural language generation.
+This framework offers a robust solution for processing unstructured documents to access domain knowledge and expertise, enabling it to serve as a reliable assistant for domain-specific operators and decision-makers.
 
 ---
 
