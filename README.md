@@ -45,8 +45,6 @@ By leveraging knowledge graphs and advanced natural language generation, KnowGen
 
 ## Project Structure
 
-Provide a breakdown of the files and their purpose:
-
 ```plaintext
 ├── sample.py           # Entry point of the application
 ├── requirements.txt    # List of dependencies
