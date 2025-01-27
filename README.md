@@ -1,4 +1,3 @@
-# KnowGen-RAG
 
 # KnowGen-RAG: A Hybrid Retrieval-Augmented Generation Framework
 
