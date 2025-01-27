@@ -45,9 +45,7 @@ class KG:
             s = s.strip("()")
             t = tuple(part.strip() for part in s.split(','))
             nodes.append(t)
-
-        # print(nodes)
-
+            
         return nodes, dict_
 
     def construct_graph(self, nodes, dict_):
