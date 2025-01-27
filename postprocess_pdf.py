@@ -23,7 +23,6 @@ class Cleaner:
         self.md_path = os.getenv("MD_FOLDER")
         self.csv_path = os.getenv("CSV_FOLDER")
         self.prompt_path = os.getenv("JSON_FOLDER")
-        # self.li = s.ft_generate_splits(self.md_path)
         self.li = []
         with open(self.prompt_path, 'r') as file:
             data = json.load(file)
@@ -250,9 +249,14 @@ class Cleaner:
         str_ = extract_last_itemize_block(answer)
         return str_
     
-    def clean_files(self):
+    def clean_files(self, filepath = None):
         s = Splitter()
-        self.li = s.ft_generate_splits(self.md_path)
+        
+        if not filepath:
+            self.li = s.ft_generate_splits(self.md_path)
+        else:
+            self.li = s.ft_generate_splits(filepath)
+
         self.li = [fr"{j}" for j in self.li]
         
         for i in range(len(self.li)):
