@@ -39,6 +39,7 @@
 - Enhanced ability to answer complex queries with contextually relevant information.
 - Increased flexibility and scalability with support for multiple LLMs.
 - Reliable assistance for decision-making and problem-solving, backed by domain expertise.
+
 By leveraging knowledge graphs and advanced natural language generation, KnowGen-RAG provides a robust solution for processing unstructured documents to access domain-specific knowledge and expertise, serving as a reliable assistant that offers valuable insights and support to stakeholders and operators.
 
 ---
