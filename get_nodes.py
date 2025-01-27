@@ -21,7 +21,7 @@ def extract_dicts(json_string):
 class Node:
     def __init__(self):
         self.prompt_path = os.getenv("JSON_FOLDER")
-        self.csv_path = os.getenv("CSV_FOLDER")
+        self.csv_path  = os.getenv("CSV_FOLDER")
         self.replace_lines_in_csv(self.csv_path)
 
         with open(self.prompt_path, 'r') as file:
@@ -56,7 +56,6 @@ class Node:
         df = df.applymap(remove_lines)
         df.to_csv(file_path, index=False)
 
-#TO TEST
     def compute_nodes(self, str_):
         user_question = f"Now make a knowledge graph for this:\n{str_}"
         prompt = make_prompt2(self.sys_instruct, user_question, self.example_question1, self.example_answer1)
@@ -67,7 +66,6 @@ class Node:
        
         return str_values
     
-#TO TEST
     def add_nodes(self, file_path):
         df = pd.read_csv(file_path, usecols = ['text'])
         nodes = []
