@@ -32,9 +32,6 @@
 3. **Advanced LLM Integration**  
    KnowGen-RAG supports seamless integration with advanced LLMs, such as **Gemini** and **Cohere**, to further improve the quality and accuracy of generated answers.
 
-4. **Domain Expertise and Stakeholder Assistance**  
-   By leveraging knowledge graphs and advanced natural language generation, KnowGen-RAG has the potential to serve as a reliable assistant powered by domain-specific expertise and knowledge, offering valuable insights and support to stakeholders.
-
 
 ## Benefits
 
@@ -43,8 +40,7 @@
 - Increased flexibility and scalability with support for multiple LLMs.
 - Reliable assistance for decision-making and problem-solving, backed by domain expertise.
 
-This framework offers a robust solution for processing unstructured documents to access domain knowledge and expertise, enabling it to serve as a reliable assistant for domain-specific operators and decision-makers.
-
+ By leveraging knowledge graphs and advanced natural language generation, KnowGen-RAG provides a robust solution for processing unstructured documents to access domain-specific knowledge and expertise, serving as a reliable assistant that offers valuable insights and support to stakeholders and operators.
 ---
 
 ## Features
