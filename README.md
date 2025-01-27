@@ -55,7 +55,9 @@ By leveraging knowledge graphs and advanced natural language generation, KnowGen
 └── rerank.py           # For Cohere's API call (Re-Ranking)
 └── gemini_api.py       # For Gemini's API call (Answer Generation)
 └── gemini_api.py       # For Gemini's API call (Answer Generation)
+```
 
+---
 
 ## How to Use
 
