@@ -1,6 +1,29 @@
 # KnowGen-RAG
 
-A brief description of your project, its purpose, and what it aims to achieve.
+# KnowGen-RAG: A Hybrid Retrieval-Augmented Generation Framework
+
+We propose **KnowGen-RAG**, a hybrid Retrieval-Augmented Generation (RAG) framework designed to process highly technical documents by integrating knowledge graphs—comprising entities and relationships—with Large Language Model (LLM)-based natural language generation. This innovative approach enables more effective comprehension and contextualization of complex information.
+
+## Key Features of KnowGen-RAG
+
+1. **Integration with Knowledge Graphs**  
+   KnowGen-RAG incorporates knowledge graphs to represent entities and relationships, providing a structured foundation for retrieving and contextualizing information.
+
+2. **Indexing and Enrichment of Documents**  
+   The framework indexes PDF documents, enriches the content with detailed explanations, and organizes the data into a graph-like structure. This enhances the retrieval process and allows for precise extraction of context to address complex queries.
+
+3. **Advanced LLM Integration**  
+   KnowGen-RAG supports seamless integration with advanced LLMs, such as **Gemini** and **Cohere**, to further improve the quality and accuracy of generated answers.
+
+## Benefits
+
+- Improved understanding of highly technical documents.
+- Enhanced ability to answer complex queries with contextually relevant information.
+- Increased flexibility and scalability with support for multiple LLMs.
+
+---
+
+This framework offers a powerful solution for bridging the gap between unstructured technical data and effective natural language generation.
 
 ---
 
