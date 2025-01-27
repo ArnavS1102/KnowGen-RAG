@@ -26,7 +26,7 @@
    KnowGen-RAG incorporates knowledge graphs to represent entities and relationships, providing a structured foundation for retrieving and contextualizing information.
 
 2. **Indexing and Enrichment of Documents**  
-   The framework indexes PDF documents, enriches the content with detailed explanations, and organizes the data into a graph-like structure. This enhances the retrieval process and allows for precise extraction of context to address complex queries.
+   The framework indexes PDF documents using [Nougat's OCR](https://github.com/facebookresearch/nougat), enriches the content with detailed explanations, and organizes the data into a graph-like structure. This enhances the retrieval process and allows for precise extraction of context to address complex queries.
 
 3. **Advanced LLM Integration**  
    KnowGen-RAG supports seamless integration with advanced LLMs, such as **Gemini** and **Cohere**, to further improve the quality and accuracy of generated answers.
