@@ -1,5 +1,4 @@
 from get_kg import KG
-# from get_faiss import FAISS_IDX
 from question_node import Question
 from gemini_api import make_prompt1, send_request
 import os
@@ -31,9 +30,9 @@ class RAG:
         self.example_question2 = r"{}".format(data["GENERATOR"]["example_question2"])
         self.example_answer2 = r"{}".format(data["GENERATOR"]["example_answer2"])
 
-        # pdf2md.parse_dir(self.dest_dir, self.source_dir)
-        # cleaner.clean_files()0
-        # node.add_nodes(self.csv_path)
+        pdf2md.parse_dir(self.dest_dir, self.source_dir)
+        cleaner.clean_files(self.dest_dir)
+        node.add_nodes(self.csv_path)
         self.graph = KG()
 
     def generate_answer(self, question):
