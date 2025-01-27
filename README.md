@@ -10,11 +10,7 @@
 1. [Features](#features)  
 2. [Benefits](#benefits)  
 3. [Project Structure](#project-structure)  
-4. [Setup Instructions](#setup-instructions)  
-5. [How to Use](#how-to-use)  
-6. [Dependencies](#dependencies)  
-7. [Contributing](#contributing)  
-8. [License](#license)  
+4. [How to Use](#how-to-use)  
 
 
 ---
