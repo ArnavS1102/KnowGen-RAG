@@ -7,21 +7,20 @@
 
 ## Table of Contents
 
-1. [Overview](#overview)
-2. [Benefits](#benefits)
-3. [Features](#features)
-4. [Project Structure](#project-structure)
-5. [Setup Instructions](#setup-instructions)
-6. [How to Use](#how-to-use)
-7. [Dependencies](#dependencies)
-8. [Contributing](#contributing)
-9. [License](#license)
+1. [Features](#features)  
+2. [Benefits](#benefits)  
+3. [Project Structure](#project-structure)  
+4. [Setup Instructions](#setup-instructions)  
+5. [How to Use](#how-to-use)  
+6. [Dependencies](#dependencies)  
+7. [Contributing](#contributing)  
+8. [License](#license)  
+
 
 ---
 
-## Overview
 
-## Key Features of KnowGen-RAG
+## Features
 
 1. **Integration with Knowledge Graphs**  
    KnowGen-RAG incorporates knowledge graphs to represent entities and relationships, providing a structured foundation for retrieving and contextualizing information.
@@ -44,7 +43,6 @@ By leveraging knowledge graphs and advanced natural language generation, KnowGen
 
 ---
 
-## Features
 
 List the key features of the project:
 
