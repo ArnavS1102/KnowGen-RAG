@@ -1,0 +1,11 @@
+pymupdf
+langchain
+transformers
+google-generativeai
+python-dotenv
+pandas
+sentence_transformers
+cohere
+faiss-cpu
+python-Levenshtein
+networkx
