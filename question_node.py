@@ -4,7 +4,7 @@ import os
 
 from gemini_api import make_prompt2, send_request
 from dotenv import load_dotenv
-from get_nodes import extract_dicts
+from node import extract_dicts
 
 load_dotenv(".env")
 
