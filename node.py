@@ -22,7 +22,6 @@ class Node:
     def __init__(self):
         self.prompt_path = os.getenv("JSON_FOLDER")
         self.csv_path  = os.getenv("CSV_FOLDER")
-        self.replace_lines_in_csv(self.csv_path)
 
         with open(self.prompt_path, 'r') as file:
             data = json.load(file)
@@ -31,7 +30,6 @@ class Node:
         self.example_question1 = r"{}".format(data["Node"]["example_question1"])
         self.example_answer1 = r"{}".format(data["Node"]["example_answer1"])
 
-        
     def replace_lines_in_csv(self,file_path):
     
         lines_to_remove = [
@@ -74,6 +72,7 @@ class Node:
             nodes.append(nodes_tup)
         df['nodes'] = nodes
         df.to_csv(file_path)
+        self.replace_lines_in_csv(self.csv_path)
     
 
 
