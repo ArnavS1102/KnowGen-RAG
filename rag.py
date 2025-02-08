@@ -8,7 +8,7 @@ from postprocess_pdf import Cleaner, extract_last_itemize_block
 from node import Node
 
 class RAG:
-    def __init__(self, no_docs):
+    def __init__(self, no_docs, make_graph = False):
         self.no_docs = no_docs
         self.prompt_path = os.getenv("JSON_FOLDER")
         self.source_dir = os.getenv("PDF_FOLDER")
@@ -32,8 +32,10 @@ class RAG:
 
         pdf2md.parse_dir(self.dest_dir, self.source_dir)
         cleaner.clean_files(self.dest_dir)
-        node.add_nodes(self.csv_path)
-        self.graph = KG()
+        
+        if make_graph:
+            node.add_nodes(self.csv_path)
+            self.graph = KG()
 
     def generate_answer(self, question):
         Q = Question(question)
