@@ -5,6 +5,7 @@ import re
 from gemini_api import make_prompt1, make_prompt2, send_request
 from dotenv import load_dotenv
 import json
+import time
 
 from md_split import Splitter
 
@@ -261,6 +262,7 @@ class Cleaner:
         
         for i in range(len(self.li)):
             m = self.process_string(self.li[i], self.process_input)
+            time.sleep(10)
             self.li[i] =  m 
 
         df = pd.DataFrame({'text': self.li})
