@@ -59,7 +59,14 @@ By leveraging knowledge graphs and advanced natural language generation, KnowGen
 
 ---
 
-## How to Use
+## How to Use 
+### 1. Create Required Directories
+Run the following command to create necessary directories:
+
+```sh
+python make_dirs.py
+
+
 
  
 
