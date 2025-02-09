@@ -65,7 +65,12 @@ Run the following command to create necessary directories:
 
 ```sh
 python make_dirs.py
-'''
+
+### 2. Upload PDF Files
+Place all your PDF documents into the `./pdf` directory.
+
+
+
 
 
 
