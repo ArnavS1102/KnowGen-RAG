@@ -23,40 +23,36 @@ class KG:
         self.csv_path = os.getenv("CSV_FOLDER")
         self.prompt_path = os.getenv("JSON_FOLDER")
         self.df = pd.read_csv(self.csv_path, usecols = ['text', 'nodes'])
-        nodes, dict = self.get_nodes(self.df)
-        self.G = self.construct_graph(nodes, dict)
+        dict = self.get_nodes(self.df)
+        self.G = self.construct_graph(dict)
+        self.graph_nodes = list(self.G.nodes)
         self.embedding_model = SentenceTransformer('all-MiniLM-L6-v2',trust_remote_code=True)
         self.graph_node_embeddings = self.get_embeddings()
         self.index = build_faiss_index(self.graph_node_embeddings)
-        self.graph_nodes = list(self.G.nodes)
-
+        
     def get_nodes(self, df):
+        pattern = r"<([^>]+)>"
         dict_ = {}
         li = []
-        nodes = []
-        for i in range(df.shape[0]):
-            for j in str(df.loc[i,'nodes']).replace(")",")|").split('|')[:-1]:
-                dict_[j] = i
+        str_ = [i.replace("['","").replace("]'","") for i in df['nodes']]
 
-        keys = [key for key in dict_.keys()]
+        for i in range(len(str_)):
+            matches = re.findall(pattern, str_[i])
+            tuples_list = [tuple(map(str.strip, match.split(',', 2))) for match in matches]
+            for tuple_ in tuples_list:
+                dict_[tuple_] = i
 
-        for i in range(len(keys)):
-            s = keys[i]
-            s = s.strip("()")
-            t = tuple(part.strip() for part in s.split(','))
-            nodes.append(t)
-            
-        return nodes, dict_
+        return dict_
 
-    def construct_graph(self, nodes, dict_):
+    def construct_graph(self,dict_):
         G = nx.DiGraph()
         keys = [key for key in dict_.keys()]
-        for id,tuple_ in enumerate(nodes):
-            if len(tuple_) ==3:
-                node1 = str(tuple_[0].replace('[','').replace('"','').replace("'",""))
-                node2 = str(tuple_[1].replace('[','').replace('"','').replace("'",""))
-                relationship = tuple_[2]
-                G.add_edge(node1.replace('(','').replace(')',''), node2.replace('(','').replace(')',''), label=f'{relationship} DF_INDEX:{dict_[keys[id]]}')
+        for key in keys:
+            if len(key) == 3:
+                node1 = key[0]
+                node2 = key[1]
+                relationship = key[2]
+                G.add_edge(node1, node2, label=f'{relationship} DF_INDEX:{dict_[key]}')
         return G
     
     def get_embeddings(self, nodes = None):
