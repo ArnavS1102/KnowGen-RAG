@@ -70,6 +70,30 @@ python make_dirs.py
 ### 2. Upload PDF Files
 Place all your PDF documents into the `./pdf` directory.
 
+### 3. Run OCR on PDFs
+Execute the following script to perform Optical Character Recognition (OCR) on the uploaded PDFs:
+
+```sh
+python ocr.py
+```
+
+### 4. Run the RAG-based System
+Now, you can run the `sample.py` script.
+
+#### First-time setup
+Uncomment the following line in `sample.py` before running:
+
+```python
+rag = RAG(5, make_kg=True)
+```
+For subsequent runs
+Use the following command to generate an answer by providing your question:
+
+```python
+ans = rag.generate_answer('<Enter your Question>')
+```
+
+
 
 
 
