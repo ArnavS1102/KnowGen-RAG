@@ -3,20 +3,20 @@ from question_node import Question
 from gemini_api import make_prompt1, send_request
 import os
 import json
-from preprocess_pdf import PDF2MD
-from postprocess_pdf import Cleaner, extract_last_itemize_block
+from postprocess_pdf import extract_last_itemize_block
 from node import Node
+from dotenv import load_dotenv
+
+load_dotenv(".env")
 
 class RAG:
-    def __init__(self, no_docs, pre_clean = False):
+    def __init__(self, no_docs, make_kg = False):
         self.no_docs = no_docs
         self.prompt_path = os.getenv("JSON_FOLDER")
         self.source_dir = os.getenv("PDF_FOLDER")
         self.dest_dir = os.getenv("MD_FOLDER")
         self.csv_path = os.getenv("CSV_FOLDER")
 
-        pdf2md = PDF2MD()
-        cleaner = Cleaner()
         node = Node()
 
         with open(self.prompt_path, 'r') as file:
@@ -30,11 +30,9 @@ class RAG:
         self.example_question2 = r"{}".format(data["GENERATOR"]["example_question2"])
         self.example_answer2 = r"{}".format(data["GENERATOR"]["example_answer2"])
 
-        if pre_clean:
-            pdf2md.parse_dir(self.dest_dir, self.source_dir)
-            cleaner.clean_files(self.dest_dir)
+        if make_kg:
+            node.add_nodes(self.csv_path)
         
-        node.add_nodes(self.csv_path)
         self.graph = KG()
 
     def generate_answer(self, question):
