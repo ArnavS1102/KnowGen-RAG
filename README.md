@@ -94,7 +94,12 @@ ans = rag.generate_answer('<Enter your Question>')
 ```
 
 
+### 5. Execute the Script
+Run the script:
 
+```sh
+python sample.py
+```
 
 
 
