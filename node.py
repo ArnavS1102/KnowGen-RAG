@@ -60,7 +60,7 @@ class Node:
         response = send_request(prompt)
         li = extract_dicts(response.replace('json','').replace("```",""))
         dicts = [(temp_dict['node_1']['name'], temp_dict['node_2']['name'], temp_dict['relationship']) for temp_dict in li]
-        str_values = ['({}, {}, {})'.format(node1, node2, relationship) for node1, node2, relationship in dicts]
+        str_values = ['<{}, {}, {}>'.format(node1, node2, relationship) for node1, node2, relationship in dicts]
        
         return str_values
     
