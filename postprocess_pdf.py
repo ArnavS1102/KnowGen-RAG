@@ -12,12 +12,17 @@ from md_split import Splitter
 load_dotenv(".env")
 
 def extract_last_itemize_block(text):
-        itemize_blocks = re.findall(r'\\begin{itemize}(.*?)\\end{itemize}', text, re.DOTALL)
-        if not itemize_blocks:
-            return [] 
-        last_block = itemize_blocks[-1]
-        items = re.findall(r'\\item\s+(.*)', last_block)
-        return '\n'.join(items)
+    lines = text.splitlines()
+    
+    extracted_lines = []
+    
+    for line in lines:
+        if line.strip().startswith(r'\item'):
+            cleaned_line = line.strip().replace(r'\item', '').strip()
+            extracted_lines.append(cleaned_line)
+    
+    combined_text = ' '.join(extracted_lines)
+    return combined_text
 
 class Cleaner:
     def __init__(self):
@@ -248,6 +253,8 @@ class Cleaner:
         PROMPT = make_prompt1(self.sys_instruct, user_context, user_question, self.example_ctx_1, self.example_inp_1, self.example_out_1, self.example_ctx_2, self.example_inp_2, self.example_out_2)
         answer = send_request(PROMPT)
         str_ = extract_last_itemize_block(answer)
+        str_ = self.replace_latex_in_text(str_)
+        print(str_)
         return str_
     
     def clean_files(self, filepath = None):
@@ -263,7 +270,8 @@ class Cleaner:
         for i in range(len(self.li)):
             m = self.process_string(self.li[i], self.process_input)
             time.sleep(10)
-            self.li[i] =  m 
+            self.li[i] =  self.strip_latex_commands(m)
+            self.li[i] =  self.replace_latex_in_text(m)
 
         df = pd.DataFrame({'text': self.li})
         df.to_csv(self.csv_path)
